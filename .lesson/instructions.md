@@ -5,7 +5,7 @@
 The Marine Conservation Society collects data on the amount of pollution on UK beaches and gives each beach a rating.
 
 |  |  | Rating |
-| --- | --- | --- | 
+| --- | --- | :---: | 
 | Excellent | (excellent water quality and local sewage treatment) | 1 |
 | Good | (good water quality) | 2 |
 | Poor | (water quality meets minimum standards) | 3 |
@@ -28,7 +28,7 @@ When run, the program should:
 
 Aber Mawr Bay,1  
 Aberaeron - Harbour (Fourth Groyne North),5  
-Aberafan ,3  
+Aberafan,3  
 Aberarth,3  
 ...
 

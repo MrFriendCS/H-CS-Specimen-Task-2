@@ -7,14 +7,14 @@ from dataclasses import dataclass
 
 # Define the record
 @dataclass
-class beachData:
+class beach:
     name: str = ""
     rating: int = 0
 
 
 def getBeachData():
     '''
-
+    Read in beach names and ratings from file
     ''' 
 
     # Declare local variables and datatypes
@@ -22,7 +22,7 @@ def getBeachData():
     name = ""
     rating = 0
     tempArray = [""] * 2
-    beaches = [beachData()] * 973
+    beaches = [beach()] * 973
 
     # Connect to the file
     file = open("beachData.csv", "r")
@@ -41,21 +41,60 @@ def getBeachData():
         rating = int(tempArray[1].strip())
 
         # Add a record to array
-        beaches[index] = beachData(name, rating)
+        beaches[index] = beach(name, rating)
 
     return beaches
 
 
+def calcAverage(beaches):
+    '''
+    Calculate and return the average rating of the beaches tested
+    '''
 
+    # Declare local variables
+    total = 0
+    counter = 0
+    average = 0.0
+
+    # Start loop for each beach
+    for index in range(len(beaches)):
+
+        # Is rating of current beach not 5?
+        if beaches[index].rating != 5:
+
+            # Add current beach rating onto total
+            total = total + beaches[index].rating
+
+            # Increment counter
+            counter = counter + 1
+
+    # Calculate average to 1 dp
+    average = round(total / counter, 1)
+    
+    return average
+
+
+def displayAverage(average):
+    '''
+    Display the average rating of all beaches tested
+    '''
+
+    print("The average rating for all beaches tested is " + str(average))
 
 #
 ## Main program
 #
 
 # Declare global variables and datatypes
-beaches = [beachData()] * 973  # Array of record
+averageRating = 0.0
+beachData = [beach()] * 973  # Array of record
 
-# Get beach data
-beaches = getBeachData()
+# Read in beach names and ratings from file
+beachData = getBeachData()
 
-# Get average beach rating
+# Calculate and return the average rating of the beaches tested
+averageRating = calcAverage(beachData)
+
+# Display the average rating of all beaches tested
+displayAverage(averageRating)
+
