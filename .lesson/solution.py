@@ -5,6 +5,7 @@
 # Import code for records
 from dataclasses import dataclass
 
+
 # Define the record
 @dataclass
 class beach:
@@ -15,7 +16,7 @@ class beach:
 def getBeachData():
     '''
     Read in beach names and ratings from file
-    ''' 
+    '''
 
     # Declare local variables and datatypes
     line = ""
@@ -70,7 +71,7 @@ def calcAverage(beaches):
 
     # Calculate average to 1 dp
     average = round(total / counter, 1)
-    
+
     return average
 
 
@@ -80,6 +81,57 @@ def displayAverage(average):
     '''
 
     print("The average rating for all beaches tested is " + str(average))
+
+
+def displayBeaches(beaches):
+    '''
+    Display all the beaches with a rating entered by the user
+    '''
+
+    # Declare local variables
+    userRating = 0
+
+    # Get rating from user
+    userRating = int(input("Enter the rating to search for: "))
+
+    # Only accept valid ratings (1-5)
+    while userRating < 1 or userRating > 5:
+        print("Rating must be a value from 1 to 5.")
+        userRating = int(input("Enter the rating to search for: "))
+
+    # Start loop for each beach
+    for index in range(len(beaches)):
+
+        # Is current rating = user rating?
+        if beaches[index].rating == userRating:
+            
+            ''' Pre-refinement
+            # Display beach name
+            print(beaches[index].name)
+            '''
+
+            # Set position of space character to 0
+            position = 0
+            found = False
+
+            # Repeat for each character in name
+            for letter in range(len(beaches[index].name)):
+                
+                # Update position if first space character found
+                if found == False and beaches[index].name[letter] == " ":
+
+                    position = letter
+                    found = True
+
+            # Is position = 0?
+            if position == 0:
+                # Yes - Display whole beach name
+                print(beaches[index].name)
+            
+            else:
+                # No - Display beach name from first character to the position of the space
+                beaches[index].name[0:position]
+
 
 #
 ## Main program
@@ -98,3 +150,5 @@ averageRating = calcAverage(beachData)
 # Display the average rating of all beaches tested
 displayAverage(averageRating)
 
+# Display all the beaches with a rating entered by the user
+displayBeaches(beachData)
