@@ -1,4 +1,4 @@
-# Lesson Plan: H Specimen - Water Quality
+# Lesson Plan: H Specimen Task 2
 
 ## beachData.csv
 
