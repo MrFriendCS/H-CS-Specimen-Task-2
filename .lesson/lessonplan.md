@@ -1,4 +1,4 @@
-# Lesson Plan: H Specimen Task 2
+# Lesson Plan: H CS Specimen Task 2
 
 ## beachData.csv
 
