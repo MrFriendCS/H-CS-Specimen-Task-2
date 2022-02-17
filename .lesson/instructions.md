@@ -4,13 +4,7 @@
 
 The Marine Conservation Society collects data on the amount of pollution on UK beaches and gives each beach a rating.
 
-|  |  | Rating |
-| --- | --- | :---: | 
-| Excellent | (excellent water quality and local sewage treatment) | 1 |
-| Good | (good water quality) | 2 |
-| Poor | (water quality meets minimum standards) | 3 |
-| Fail | (water quality below minimum standards) | 4 |
-|Not tested |  | 5
+![Ratings](assets/ratings.png)
 
 ## Program analysis
 
@@ -101,4 +95,4 @@ Mark this clearly on one of the printouts of your code. __(1 mark)__
 ___2e___ With reference to your own program code, evaluate:
 * the robustness of your program if additional beach data was added to the CSV file __(1 mark)__
 * the usability of your program __(2 marks)__
-* the maintainability of your program __(2marks)__
+* the maintainability of your program __(2 marks)__
